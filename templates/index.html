@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Your Name">
+    <title>Product Search</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Product Analyzer</h1>
+    <form method="POST">
+        <input type="text" name="search_query" placeholder="Search any product">
+        <button type="submit">Search</button>
+    </form>
+    <br>
+    {% if result %}
+    <div class="p_list">
+        {% for product in result %}
+        <div class="p_container">
+            <div class="p_image">
+                <img src="{{ product.ImageURL }}" alt="{{ product.Name }}">
+            </div>
+            <div class="p_details">
+                <div class="p_name">{{ product.Name }}</div>
+                <div class="p_price">Price: &#8377;{{ product.Price }}</div>
+                <div class="p_rating">Rating: {{ product.Review }}</div>
+                <div class="p_URL"> URL: <a href="{{ product.ProductURL }}" target="_blank">{{ product.ProductURL }}</a></div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
