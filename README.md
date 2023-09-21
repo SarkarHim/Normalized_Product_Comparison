@@ -1,1 +1,1 @@
-# Normalized_Product_Comparison
+Product_Recommendation_System_implementing_Bi-Parametric_Linear_Algebraic_Normalization_using_Python
